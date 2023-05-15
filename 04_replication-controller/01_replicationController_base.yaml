@@ -1,4 +1,4 @@
-apiVersion: v1
+apiVersion: v1 # версия кубера по которой он будет грузить конфиг
 kind: ReplicationController # Сущность которую мы хотим пульнуть в кубер
 metadata: # Вся общая инфа по этой сущности
   name: 01-replication-controller--base # название сущности
@@ -17,5 +17,5 @@ spec: # что в этой сущности будет находится
       containers: # перечисляем контейнеры
       - name: koa-server--pod-container-for--01-replication-controller--base # название контейнера который будет крутиться в поде
         image:  luckytwixy/koa-serve-image:0.1 # образ, из которого будет создаваться контейнер
-        ports: # порты контейнера, если честно не много не понял какие еще там могут быть.
+        ports: # порты контейнера
         - containerPort: 3000 # порт на котором сидит наше приложение.
